@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Matter Limits Explorer — Compare Experimental Exclusion Limits</title>
+  <meta name="description" content="Interactive dashboard aggregating dark matter detection limits from LZ, XENONnT, PandaX, Fermi-LAT, ATLAS, CMS and more. Compare WIMP cross-section exclusion curves across direct, indirect, and collider experiments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌌</text></svg>" />
+</head>
+<body>
+
+  <!-- Hero -->
+  <section id="hero" class="hero-section"></section>
+
+  <!-- Dashboard -->
+  <main id="dashboard" class="dashboard">
+    <div class="dashboard-header">
+      <h2 class="section-title">Exclusion Limits</h2>
+      <p class="section-desc">Click a tab to switch between detection methods. Toggle experiments in the sidebar.</p>
+    </div>
+
+    <div id="tabs"></div>
+
+    <div class="dashboard-grid">
+      <div class="chart-container">
+        <div id="chart-area" class="chart-area"></div>
+      </div>
+      <aside id="experiment-panel" class="experiment-panel"></aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>Dark Matter Limits Explorer · Data representative of published results · Not for official analysis</p>
+      <p class="footer-links">
+        <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv</a>
+        <span>·</span>
+        <a href="https://pdg.lbl.gov" target="_blank" rel="noopener">PDG</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
