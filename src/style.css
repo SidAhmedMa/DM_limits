@@ -428,38 +428,6 @@ a:hover {
   overflow: visible;
 }
 
-/* ─── Chart Toolbar ─────────────────────────────────────────────────── */
-.chart-toolbar {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  display: flex;
-  gap: 4px;
-  z-index: 10;
-}
-
-.chart-tool-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--bg-card);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.chart-tool-btn:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  background: var(--chart-hover-bg);
-}
-
 /* ─── Coordinate Readout ────────────────────────────────────────────── */
 .chart-coord-readout {
   position: absolute;
