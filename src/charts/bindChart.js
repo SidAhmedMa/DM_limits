@@ -1,10 +1,7 @@
 /**
- * D3 chart factory — fully interactive SVG-based scientific plots.
+ * D3 chart factory — scientific plots.
  *
  * Interactive features:
- *   • Zoom & pan (scroll wheel + drag)
- *   • Brush-to-zoom (shift+drag draws a rectangle to zoom into)
- *   • Double-click to reset zoom
  *   • Crosshair with live coordinate readout
  *   • Click on a curve to select/highlight it
  *   • Responsive via ResizeObserver
@@ -63,26 +60,9 @@ export function createChart(config) {
   coordReadout.className = 'chart-coord-readout';
   wrapper.appendChild(coordReadout);
 
-  // Chart toolbar
-  const toolbar = document.createElement('div');
-  toolbar.className = 'chart-toolbar';
-  toolbar.innerHTML = `
-    <button class="chart-tool-btn" data-action="reset" title="Reset zoom (double-click)">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1v4h4"/><path d="M1 5A6 6 0 1 1 2.5 10"/></svg>
-    </button>
-    <button class="chart-tool-btn" data-action="zoomIn" title="Zoom in">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><line x1="9.2" y1="9.2" x2="13" y2="13"/><line x1="4" y1="6" x2="8" y2="6"/><line x1="6" y1="4" x2="6" y2="8"/></svg>
-    </button>
-    <button class="chart-tool-btn" data-action="zoomOut" title="Zoom out">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4.5"/><line x1="9.2" y1="9.2" x2="13" y2="13"/><line x1="4" y1="6" x2="8" y2="6"/></svg>
-    </button>
-  `;
-  wrapper.appendChild(toolbar);
-
   container.appendChild(wrapper);
 
   let width, height;
-  let currentTransform = d3.zoomIdentity;
 
   function getSize() {
     const rect = container.getBoundingClientRect();
@@ -91,29 +71,21 @@ export function createChart(config) {
     return { width, height };
   }
 
-  // ─── Build base scales (reset domain) ───
-  function buildBaseScales() {
+  // ─── Build scales ───
+  function buildScales() {
     getSize();
-    const xBase = axes.x.type === 'log'
+    const xScale = axes.x.type === 'log'
       ? d3.scaleLog().domain(axes.x.domain).range([0, width]).clamp(true)
       : d3.scaleLinear().domain(axes.x.domain).range([0, width]);
-    const yBase = axes.y.type === 'log'
+    const yScale = axes.y.type === 'log'
       ? d3.scaleLog().domain(axes.y.domain).range([height, 0]).clamp(true)
       : d3.scaleLinear().domain(axes.y.domain).range([height, 0]);
-    return { xBase, yBase };
-  }
-
-  // ─── Apply current zoom transform to scales ───
-  function getZoomedScales(xBase, yBase) {
-    const xScale = currentTransform.rescaleX(xBase);
-    const yScale = currentTransform.rescaleY(yBase);
     return { xScale, yScale };
   }
 
   // ─── Render ───
   function render() {
-    const { xBase, yBase } = buildBaseScales();
-    const { xScale, yScale } = getZoomedScales(xBase, yBase);
+    const { xScale, yScale } = buildScales();
     const state = getState();
 
     svg.selectAll('*').remove();
@@ -268,18 +240,7 @@ export function createChart(config) {
     // ─── Interaction overlay ───
     const overlay = chartArea.append('rect')
       .attr('width', width).attr('height', height)
-      .attr('fill', 'transparent').style('cursor', 'crosshair');
-
-    // ─── Zoom behavior ───
-    const zoom = d3.zoom()
-      .scaleExtent([0.5, 50])
-      .on('zoom', (event) => {
-        currentTransform = event.transform;
-        render();
-      });
-
-    svg.call(zoom);
-    svg.call(zoom.transform, currentTransform);
+      .attr('fill', 'transparent');
 
     // ─── Mouse interactions ───
     overlay.on('mousemove', function(event) {
@@ -333,27 +294,6 @@ export function createChart(config) {
 
     // Clear highlight on background click
     overlay.on('click', () => dispatch('CLEAR_HIGHLIGHT'));
-
-    // ─── Toolbar actions ───
-    toolbar.querySelectorAll('.chart-tool-btn').forEach(btn => {
-      btn.onclick = () => {
-        const action = btn.dataset.action;
-        if (action === 'reset') {
-          currentTransform = d3.zoomIdentity;
-          svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
-        } else if (action === 'zoomIn') {
-          svg.transition().duration(300).call(zoom.scaleBy, 1.5);
-        } else if (action === 'zoomOut') {
-          svg.transition().duration(300).call(zoom.scaleBy, 0.67);
-        }
-      };
-    });
-
-    // Double-click to reset
-    svg.on('dblclick.zoom', () => {
-      currentTransform = d3.zoomIdentity;
-      svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
-    });
   }
 
   // ─── Store subscriptions ───
