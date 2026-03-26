@@ -54,14 +54,13 @@ export function initExperimentPanel(containerId) {
     container.appendChild(header);
 
     // Channel selector for indirect tab
-    if (category === 'indirect') {
+    if (category === 'indirect' || category === 'direct_sd') {
       const channelSel = document.createElement('div');
       channelSel.className = 'channel-selector';
 
-      const channels = [
-        { id: 'bb', label: 'bb̄ channel' },
-        { id: 'tautau', label: 'τ⁺τ⁻ channel' },
-      ];
+      const channels = category === 'indirect' 
+        ? [ { id: 'bb', label: 'bb̄ channel' }, { id: 'tautau', label: 'τ⁺τ⁻ channel' } ]
+        : [ { id: 'neutron', label: 'Neutron' }, { id: 'proton', label: 'Proton' } ];
 
       channels.forEach(ch => {
         const btn = document.createElement('button');
@@ -80,7 +79,7 @@ export function initExperimentPanel(containerId) {
 
     experiments.forEach(exp => {
       // For indirect, only show experiments matching current channel
-      if (category === 'indirect' && exp.channel !== state.activeChannel) return;
+      if ((category === 'indirect' || category === 'direct_sd') && exp.channel !== state.activeChannel) return;
 
       const es = state.experiments[exp.id] || { visible: true, highlighted: false };
 
