@@ -4,7 +4,6 @@
 
 import { createChart } from './bindChart.js';
 import { getExperimentsForCategory } from '../data/experiments.js';
-import { siFogLayers } from '../data/neutrinoFog.js';
 
 export function initDirectSI(containerId) {
   const datasets = getExperimentsForCategory('direct_si');
@@ -24,7 +23,7 @@ export function initDirectSI(containerId) {
         domain: [1e-49, 1e-44],
       },
     },
-    fogLayers: siFogLayers,
+    fogLayers: [],
     isContour: false,
   });
 }

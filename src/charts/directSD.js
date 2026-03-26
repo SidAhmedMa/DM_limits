@@ -4,7 +4,6 @@
 
 import { createChart } from './bindChart.js';
 import { getExperimentsForCategory } from '../data/experiments.js';
-import { sdFogLayers } from '../data/neutrinoFog.js';
 import { getState, subscribe } from '../state/store.js';
 
 let currentChart = null;
@@ -34,7 +33,7 @@ export function initDirectSD(containerId) {
           domain: [1e-49, 1e-44],
         },
       },
-      fogLayers: sdFogLayers,
+      fogLayers: [],
       isContour: false,
     });
 
