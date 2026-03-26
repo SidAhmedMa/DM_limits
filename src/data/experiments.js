@@ -476,13 +476,245 @@ const directSI = [
 
 const directSD = [
   {
+    id: 'lz_2025_sd_n',
+    name: 'LZ (neutron)',
+    year: 2025,
+    category: 'direct_sd',
+    channel: null,
+    color: '#00e5ff',
+    reference: 'https://doi.org/10.1103/4dyc-z8zf',
+    units: { x: 'GeV/c²', y: 'cm²' },
+    dataPoints: [
+      {
+            x: 9,
+            y: 1.16e-41
+      },
+      {
+            x: 11,
+            y: 3.6e-42
+      },
+      {
+            x: 13,
+            y: 1.65e-42
+      },
+      {
+            x: 16,
+            y: 8.66e-43
+      },
+      {
+            x: 17,
+            y: 7.57e-43
+      },
+      {
+            x: 19,
+            y: 6.2e-43
+      },
+      {
+            x: 21,
+            y: 5.26e-43
+      },
+      {
+            x: 23,
+            y: 4.77e-43
+      },
+      {
+            x: 26,
+            y: 4.04e-43
+      },
+      {
+            x: 29,
+            y: 3.97e-43
+      },
+      {
+            x: 32,
+            y: 3.88e-43
+      },
+      {
+            x: 36,
+            y: 3.73e-43
+      },
+      {
+            x: 40,
+            y: 3.75e-43
+      },
+      {
+            x: 43,
+            y: 3.78e-43
+      },
+      {
+            x: 46,
+            y: 3.68e-43
+      },
+      {
+            x: 65,
+            y: 4.54e-43
+      },
+      {
+            x: 91,
+            y: 5.62e-43
+      },
+      {
+            x: 129,
+            y: 7.49e-43
+      },
+      {
+            x: 182,
+            y: 1e-42
+      },
+      {
+            x: 256,
+            y: 1.39e-42
+      },
+      {
+            x: 361,
+            y: 1.94e-42
+      },
+      {
+            x: 508,
+            y: 2.64e-42
+      },
+      {
+            x: 1008,
+            y: 5.07e-42
+      },
+      {
+            x: 2000,
+            y: 1.02e-41
+      },
+      {
+            x: 5000,
+            y: 2.51e-41
+      },
+      {
+            x: 10000,
+            y: 5.28e-41
+      }
+]
+  },
+  {
+    id: 'lz_2025_sd_p',
+    name: 'LZ (proton)',
+    year: 2025,
+    category: 'direct_sd',
+    channel: null,
+    color: '#ff9100',
+    reference: 'https://doi.org/10.1103/4dyc-z8zf',
+    units: { x: 'GeV/c²', y: 'cm²' },
+    dataPoints: [
+      {
+            x: 9,
+            y: 3.57e-40
+      },
+      {
+            x: 11,
+            y: 1.08e-40
+      },
+      {
+            x: 13,
+            y: 4.89e-41
+      },
+      {
+            x: 16,
+            y: 2.61e-41
+      },
+      {
+            x: 17,
+            y: 2.26e-41
+      },
+      {
+            x: 19,
+            y: 1.79e-41
+      },
+      {
+            x: 21,
+            y: 1.51e-41
+      },
+      {
+            x: 23,
+            y: 1.3e-41
+      },
+      {
+            x: 26,
+            y: 1.2e-41
+      },
+      {
+            x: 29,
+            y: 1.06e-41
+      },
+      {
+            x: 32,
+            y: 1.02e-41
+      },
+      {
+            x: 36,
+            y: 9.82e-42
+      },
+      {
+            x: 40,
+            y: 9.82e-42
+      },
+      {
+            x: 43,
+            y: 9.92e-42
+      },
+      {
+            x: 46,
+            y: 1.03e-41
+      },
+      {
+            x: 65,
+            y: 1.17e-41
+      },
+      {
+            x: 91,
+            y: 1.46e-41
+      },
+      {
+            x: 129,
+            y: 2.18e-41
+      },
+      {
+            x: 182,
+            y: 3.21e-41
+      },
+      {
+            x: 256,
+            y: 4.44e-41
+      },
+      {
+            x: 361,
+            y: 6.24e-41
+      },
+      {
+            x: 508,
+            y: 9.02e-41
+      },
+      {
+            x: 1008,
+            y: 1.78e-40
+      },
+      {
+            x: 2000,
+            y: 3.56e-40
+      },
+      {
+            x: 5000,
+            y: 8.58e-40
+      },
+      {
+            x: 10000,
+            y: 1.76e-39
+      }
+]
+  },
+  {
     id: 'xenonnt_2025_sd_n',
     name: 'XENONnT (neutron)',
     year: 2025,
     category: 'direct_sd',
     channel: null,
     color: '#00e5ff',
-    reference: 'https://journals.aps.org/prl/abstract/10.1103/msw4-t342',
+    reference: 'https://doi.org/10.1103/msw4-t342',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
       {
@@ -906,7 +1138,7 @@ const directSD = [
     category: 'direct_sd',
     channel: null,
     color: '#ff3d00',
-    reference: 'https://journals.aps.org/prl/abstract/10.1103/msw4-t342',
+    reference: 'https://doi.org/10.1103/msw4-t342',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
       {
