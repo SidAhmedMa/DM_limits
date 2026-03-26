@@ -26,7 +26,7 @@ export function initDirectSD(containerId) {
         x: {
           label: 'WIMP mass mχ (GeV/c²)',
           type: 'log',
-          domain: [3, 1e4],
+          domain: [0.3, 1e4],
         },
         y: {
           label: 'σSD (cm²)',

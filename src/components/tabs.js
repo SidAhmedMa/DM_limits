@@ -32,8 +32,9 @@ export function initTabs(containerId) {
 
     btn.addEventListener('click', () => {
       dispatch('SET_TAB', tab.id);
-      if (tab.id === 'indirect') dispatch('SET_CHANNEL', 'bb');
-      if (tab.id === 'direct_sd') dispatch('SET_CHANNEL', 'neutron');
+      const ch = getState().activeChannel;
+      if (tab.id === 'indirect' && ch !== 'bb' && ch !== 'tautau') dispatch('SET_CHANNEL', 'bb');
+      if (tab.id === 'direct_sd' && ch !== 'neutron' && ch !== 'proton') dispatch('SET_CHANNEL', 'neutron');
     });
 
     tabsWrapper.appendChild(btn);

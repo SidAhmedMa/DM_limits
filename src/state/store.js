@@ -4,8 +4,8 @@
  */
 
 const state = {
-  activeTab: 'direct_si',
-  activeChannel: 'bb',          // for indirect detection tab
+  activeTab: localStorage.getItem('activeTab') || 'direct_si',
+  activeChannel: localStorage.getItem('activeChannel') || 'bb',          // for indirect detection tab
   experiments: {},               // id → { visible: bool, highlighted: bool }
   hoveredExperiment: null,       // experiment id or null
 };
@@ -47,11 +47,13 @@ export function dispatch(action, payload) {
   switch (action) {
     case 'SET_TAB':
       state.activeTab = payload;
+      localStorage.setItem('activeTab', payload);
       notify('activeTab');
       break;
 
     case 'SET_CHANNEL':
       state.activeChannel = payload;
+      localStorage.setItem('activeChannel', payload);
       notify('activeChannel');
       break;
 

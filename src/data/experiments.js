@@ -481,7 +481,7 @@ const directSD = [
     year: 2025,
     category: 'direct_sd',
     channel: 'neutron',
-    color: '#00e5ff',
+    color: '#00ccff',
     reference: 'https://doi.org/10.1103/4dyc-z8zf',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
@@ -597,7 +597,7 @@ const directSD = [
     year: 2025,
     category: 'direct_sd',
     channel: 'proton',
-    color: '#ff9100',
+    color: '#00ccff',
     reference: 'https://doi.org/10.1103/4dyc-z8zf',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
@@ -713,7 +713,7 @@ const directSD = [
     year: 2025,
     category: 'direct_sd',
     channel: 'neutron',
-    color: '#00e5ff',
+    color: '#7c4dff',
     reference: 'https://doi.org/10.1103/msw4-t342',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
@@ -1137,7 +1137,7 @@ const directSD = [
     year: 2025,
     category: 'direct_sd',
     channel: 'proton',
-    color: '#ff3d00',
+    color: '#7c4dff',
     reference: 'https://doi.org/10.1103/msw4-t342',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
