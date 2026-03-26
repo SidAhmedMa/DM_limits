@@ -26,12 +26,12 @@ export function initDirectSD(containerId) {
         x: {
           label: 'WIMP mass mχ (GeV/c²)',
           type: 'log',
-          domain: [0.3, 1e4],
+          domain: [1, 1e4],
         },
         y: {
           label: 'σSD (cm²)',
           type: 'log',
-          domain: [1e-47, 1e-33],
+          domain: [1e-49, 1e-44],
         },
       },
       fogLayers: sdFogLayers,
