@@ -31,7 +31,7 @@ export function initDirectSD(containerId) {
         y: {
           label: 'σSD (cm²)',
           type: 'log',
-          domain: [1e-45, 1e-36],
+          domain: [1e-47, 1e-33],
         },
       },
       fogLayers: sdFogLayers,
