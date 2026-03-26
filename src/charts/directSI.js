@@ -16,12 +16,12 @@ export function initDirectSI(containerId) {
       x: {
         label: 'WIMP mass mχ (GeV/c²)',
         type: 'log',
-        domain: [0.3, 1e4],
+        domain: [1, 1e4],
       },
       y: {
         label: 'σSI (cm²)',
         type: 'log',
-        domain: [1e-50, 1e-33],
+        domain: [1e-49, 1e-44],
       },
     },
     fogLayers: siFogLayers,
