@@ -15,7 +15,7 @@ const directSI = [
     category: 'direct_si',
     channel: null,
     color: '#7c4dff',
-    reference: 'https://journals.aps.org/prl/abstract/10.1103/msw4-t342',
+    reference: 'https://doi.org/10.1103/msw4-t342',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [
       {

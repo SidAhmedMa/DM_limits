@@ -104,7 +104,7 @@ export function initExperimentPanel(containerId) {
         </div>
         <div class="exp-details">
           ${bestLimit ? `<div class="exp-best">Best: ${formatSci(bestLimit.y)} at ${bestLimit.x.toFixed(0)} ${exp.units.x}</div>` : ''}
-          <a class="exp-ref" href="https://arxiv.org/abs/${exp.reference.replace('arXiv:', '')}" target="_blank" rel="noopener">${exp.reference}</a>
+          <a class="exp-ref" href="${exp.reference.startsWith('http') ? exp.reference : `https://arxiv.org/abs/${exp.reference.replace('arXiv:', '')}`}" target="_blank" rel="noopener">${exp.reference}</a>
         </div>
       `;
 
