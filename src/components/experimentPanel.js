@@ -11,6 +11,32 @@ export function initExperimentPanel(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
+  function updateState() {
+    const state = getState();
+    const cards = container.querySelectorAll('.experiment-card');
+    cards.forEach(card => {
+      const id = card.dataset.id;
+      const es = state.experiments[id] || { visible: true, highlighted: false };
+      
+      if (es.highlighted) {
+        card.classList.add('highlighted');
+      } else {
+        card.classList.remove('highlighted');
+      }
+
+      if (!es.visible) {
+        card.classList.add('dimmed');
+      } else {
+        card.classList.remove('dimmed');
+      }
+
+      const checkbox = card.querySelector('input[type="checkbox"]');
+      if (checkbox) {
+        checkbox.checked = es.visible;
+      }
+    });
+  }
+
   function render() {
     const state = getState();
     const category = state.activeTab;
@@ -59,6 +85,7 @@ export function initExperimentPanel(containerId) {
       const es = state.experiments[exp.id] || { visible: true, highlighted: false };
 
       const card = document.createElement('div');
+      card.dataset.id = exp.id; // Added for easy lookup in updateState map
       card.className = `experiment-card ${es.highlighted ? 'highlighted' : ''} ${!es.visible ? 'dimmed' : ''}`;
 
       // Find best limit
@@ -103,7 +130,9 @@ export function initExperimentPanel(containerId) {
 
   subscribe('activeTab', render);
   subscribe('activeChannel', render);
-  subscribe('experiments', render);
+  // Instead of re-rendering everything when experiments change (like when one is hovered or toggled),
+  // we just update the DOM state to prevent resetting scroll position and breaking click/hover interactions.
+  subscribe('experiments', updateState);
 
   render();
 }
