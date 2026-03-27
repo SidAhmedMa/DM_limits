@@ -20,7 +20,7 @@ export function initDirectSI(containerId) {
       y: {
         label: 'σSI (cm²)',
         type: 'log',
-        domain: [1e-48, 1e-41],
+        domain: [1e-48, 1e-36],
       },
     },
     fogLayers: [],
