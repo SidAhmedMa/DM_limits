@@ -1555,6 +1555,25 @@ const directSD = [
       }
 ]
   }
+  ,{
+    id: 'xenonnt_2025_light_sd_n',
+    name: 'XENONnT Light WIMP (SD Neutron)',
+    year: 2025,
+    reference: 'https://doi.org/10.1103/PhysRevLett.134.111802',
+    category: 'direct_sd',
+    channel: 'neutron',
+    color: '#7c4dff',
+    units: { x: 'GeV/c²', y: 'cm²' },
+    dataPoints: [
+      { x: 3, y: 1.806322362564144e-42 },
+      { x: 4, y: 3.4283605955214776e-44 },
+      { x: 5, y: 3.7816914089592447e-45 },
+      { x: 6, y: 8.665829749558849e-46 },
+      { x: 8, y: 1.2070917650624039e-46 },
+      { x: 10, y: 4.66589589411141e-47 },
+      { x: 12, y: 2.8544267464515756e-47 }
+    ]
+  }
 ];
 
 // ─── EMPTY OTHER CHANNELS ─────────────────────────────────────────────────
