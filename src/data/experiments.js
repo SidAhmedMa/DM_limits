@@ -9,6 +9,46 @@ import { simplifyPath } from '../utils/simplify.js';
 
 const directSI = [
   {
+    id: 'xenonnt_2025_light_si',
+    name: 'XENONnT (Light DM)',
+    year: 2025,
+    category: 'direct_si',
+    channel: null,
+    color: '#7c4dff',
+    reference: 'https://doi.org/10.1103/PhysRevLett.134.111802',
+    units: { x: 'GeV/c²', y: 'cm²' },
+    dataPoints: [
+      {
+            x: 3,
+            y: 3.204939722742266e-42
+      },
+      {
+            x: 4,
+            y: 7.845298478597144e-44
+      },
+      {
+            x: 5,
+            y: 1.3091884536217821e-44
+      },
+      {
+            x: 6,
+            y: 3.70326304981281e-45
+      },
+      {
+            x: 8,
+            y: 7.752863464579778e-46
+      },
+      {
+            x: 10,
+            y: 3.352931034223887e-46
+      },
+      {
+            x: 12,
+            y: 2.298034407645595e-46
+      }
+]
+  },
+  {
     id: 'lz_2025_si',
     name: 'LZ',
     year: 2025,
