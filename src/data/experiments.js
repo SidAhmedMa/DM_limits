@@ -9,12 +9,52 @@ import { simplifyPath } from '../utils/simplify.js';
 
 const directSI = [
   {
+    id: 'xenonnt_2025_light_med_si',
+    name: 'XENONnT (Light Med.)',
+    year: 2025,
+    category: 'direct_si',
+    channel: null,
+    color: '#aeea00',
+    reference: 'https://doi.org/10.1103/PhysRevLett.134.111802',
+    units: { x: 'GeV/c²', y: 'cm²' },
+    dataPoints: [
+      {
+            x: 3,
+            y: 1.0364539433754337e-41
+      },
+      {
+            x: 4,
+            y: 4.277422346043862e-43
+      },
+      {
+            x: 5,
+            y: 1.0384257222707112e-43
+      },
+      {
+            x: 6,
+            y: 4.820989574738944e-44
+      },
+      {
+            x: 8,
+            y: 1.9001669918396234e-44
+      },
+      {
+            x: 10,
+            y: 1.2065850017462688e-44
+      },
+      {
+            x: 12,
+            y: 9.800428927759169e-45
+      }
+]
+  },
+  {
     id: 'xenonnt_2025_light_si',
     name: 'XENONnT (Light DM)',
     year: 2025,
     category: 'direct_si',
     channel: null,
-    color: '#7c4dff',
+    color: '#ff4081',
     reference: 'https://doi.org/10.1103/PhysRevLett.134.111802',
     units: { x: 'GeV/c²', y: 'cm²' },
     dataPoints: [

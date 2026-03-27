@@ -668,6 +668,22 @@ a:hover {
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-top: 2px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+.exp-ref::-webkit-scrollbar {
+  height: 4px;
+}
+
+.exp-ref::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.exp-ref::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 2px;
 }
 
 .exp-ref:hover {
