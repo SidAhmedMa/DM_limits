@@ -1637,12 +1637,12 @@ const directSD = [
       }
       , {
             id: 'xenonnt_2025_light_sd_n',
-            name: 'XENONnT Light WIMP (SD Neutron)',
+            name: 'XENONnT Light DM (neutron)',
             year: 2025,
             reference: 'https://doi.org/10.1103/PhysRevLett.134.111802',
             category: 'direct_sd',
             channel: 'neutron',
-            color: '#7c4dff',
+            color: '#ff4081',
             units: { x: 'GeV/c²', y: 'cm²' },
             dataPoints: [
                   { x: 3, y: 1.806322362564144e-42 },
